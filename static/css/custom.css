@@ -11,7 +11,7 @@ h1{
 	font-style: italic;
 }
 
-.navbar-custom{
+.navbar-default{
 	font-family: "Open Sans", sans-serif;
 	font-size: 14px;
 	color: #999999;
@@ -21,11 +21,11 @@ h1{
 	border-bottom: 1px solid #e1e1e1;
 	background-color: #ffffff;
 }
-.navbar-custom a{
+.navbar-default a{
 	color: inherit;
 	text-decoration: none;
 }
-.navbar-custom a:hover{
+.navbar-default a:hover{
 	color: #222222;
 }
 .navbar-brand{
@@ -36,9 +36,10 @@ h1{
 a.navbar-brand{
 	color: #444444;
 }
-li.active{
+.navbar-default .navbar-nav>.active>a{
 	font-weight: bold;
 	color: #666666;
+	background-color: #ffffff;
 }
 
 .content_main{
@@ -254,7 +255,7 @@ p.team_members{
 
 #resume_container{
 	width: 980px;
-	height: 2077px;
+	height: 1470px;
 	margin: auto;
 	position: relative;
 	overflow: hidden;
