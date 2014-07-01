@@ -257,20 +257,6 @@ p.team_members{
 	max-width: 850px;
 }
 
-#resume_container{
-	width: 980px;
-	height: 1470px;
-	margin: auto;
-	position: relative;
-	overflow: hidden;
-}
-#resume_iframe{
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: -70px;
-}
-
 #about_desc{
 	background-color: #f2f2f2;
 }
