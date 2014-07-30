@@ -1,0 +1,323 @@
+body {
+	font-family: "Open Sans", sans-serif !important;
+	font-weight: 300;
+	font-size: 18px;
+	color: #666666;
+	background-color: #ffffff;
+}
+h1 {
+	font-family: "Libre Baskerville", serif;
+	font-weight: 400;
+	font-style: italic;
+}
+
+.navbar-default {
+	font-family: "Open Sans", sans-serif !important;
+	font-size: 14px;
+	text-decoration: none;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #e1e1e1;
+	background-color: #ffffff;
+}
+.navbar-default a {
+	color: inherit;
+	text-decoration: none;
+}
+.navbar-default a:hover {
+	color: #222222;
+}
+.navbar-default .navbar-brand {
+	font-family: "Libre Baskerville", serif;
+	font-weight: 400;
+	font-size: 36px;
+	color: #222222;
+}
+.navbar-default .navbar-brand:hover {
+	color: #000000;
+}
+.navbar-default .navbar-nav>.active>a {
+	font-weight: 700;
+	color: #666666;
+	background-color: #ffffff;
+}
+.navbar-default .navbar-nav>.active>a:hover {
+	color: #222222;
+	background-color: #ffffff;
+}
+
+.container {
+	transition: width 0.5s;
+}
+.col-xs-1,.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-8,.col-xs-9,.col-xs-10,.col-xs-11,.col-xs-12,
+.col-sm-1,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9,.col-sm-10,.col-sm-11,.col-sm-12,
+.col-md-1,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-md-10,.col-md-11,.col-md-12,
+.col-lg-1,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9,.col-lg-10,.col-lg-11,.col-lg-12 {
+	padding-left: 5px;
+	padding-right: 5px;
+	transition: width 0.5s;
+	transition: float 0.5s;
+}
+
+#main {
+	background-color: #d9d9d9;
+	transition: all 0.5s;
+}
+.content-container {
+	padding-top: 30px;
+	padding-bottom: 40px;
+}
+footer {
+	text-align: center;
+	font-size: 14px;
+	font-family: "Open Sans", sans-serif;
+	color: #999999;
+	border-top: 1px solid #e1e1e1;
+	padding: 20px 0px;
+}
+
+
+/* projects */
+.project-panel {
+	width: 100%;
+	font-family: "Open Sans", sans-serif;
+	background-color: #f2f2f2;
+	text-align: center;
+	margin-top: 10px;
+	position: relative;
+	transition: all 0.5s;
+}
+.panel-hover {
+	font-weight: 300;
+	color: #f2f2f2;
+	background-color: #333333;
+	height: inherit;
+	width: inherit;
+	position: absolute;
+	z-index: 10;
+	opacity: 0;
+	transition: all 0.5s;
+}
+.panel-hover:hover {
+	opacity: .85;
+}
+.panel-lg {
+	height: 484px;
+}
+.panel-lg .panel-hover {
+	padding-top: 230px;
+}
+.panel-md {
+	height: 360px;
+}
+.panel-md .panel-hover {
+	padding-top: 165px;
+}
+.panel-sm {
+	height: 237px;
+}
+.panel-sm .panel-hover {
+	padding-top: 105px;
+}
+#aata {
+	background-image: url('../img/aata_logo.png');
+	background-size: 200px;
+	background-repeat: no-repeat;
+	background-origin: content-box;
+	background-position: center center;
+}
+#chi {
+	background-image: url('../img/chi_figure.jpg');
+	background-size: 90px;
+	background-repeat: no-repeat;
+	background-origin: content-box;
+	background-position: center center;
+}
+#coursera {
+	background-image: url('../img/coursera.png');
+	background-size: 400px;
+	background-repeat: no-repeat;
+	background-origin: content-box;
+	background-position: center center;
+}
+#courserecommender {
+	background-image: url('../img/courserecommender_grayscale.png');
+	background-repeat: no-repeat;
+	background-origin: content-box;
+	background-position: center center;
+}
+#courseviz {
+	background-image: url('../img/courseviz.png');
+	background-repeat: no-repeat;
+	background-origin: content-box;
+	background-position: center center;
+}
+#forddirect {
+	background-image: url('../img/forddirect_logo.gif');
+	background-size: 200px;
+	background-repeat: no-repeat;
+	background-origin: content-box;
+	background-position: center center;
+}
+#jstor {
+	background-image: url('../img/jstor_logo.jpg');
+	background-size: 120px;
+	background-repeat: no-repeat;
+	background-origin: content-box;
+	background-position: center center;
+}
+#resmaps {
+	background-image: url('../img/resmaps_heatmap.png');
+	background-size: 300px;
+	background-repeat: no-repeat;
+	background-origin: content-box;
+	background-position: center center;
+}
+#smithsonian {
+	background-image: url('../img/smithsonian_icon.gif');
+	background-size: 120px;
+	background-repeat: no-repeat;
+	background-origin: content-box;
+	background-position: center center;
+}
+
+
+.desc-wrapper {
+	margin-bottom: 30px;
+	background-color: #f2f2f2;
+	border-bottom: 1px solid #e1e1e1;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.desc-container {
+	max-width: 740px;
+	margin: auto;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+.desc-container h2 {
+	margin: 0;
+	font-family: "Open Sans", sans-serif !important;
+	font-size: 20px;
+	color: #444444;
+}
+.desc-container p {
+	margin: 0;
+	padding-top: 20px;
+	font-size: 15px;
+	color: #666666;
+	font-family: "Open Sans", sans-serif !important;
+	line-height: 1.8em;
+}
+p.team-members {
+	font-size: 14px;
+	padding-top: 2px;
+	color: #999999;
+}
+
+.project-nav {
+	background-color: #fafafa;
+	border-top: 1px solid #e1e1e1;
+}
+.project-nav-top {
+	position: relative;
+	top: -1px;
+}
+.project-nav a .col-xs-4 {
+	color: #777777;
+	background-color: #fafafa;
+	text-align: center;
+	padding: 12px;
+	border: 1px solid #e1e1e1;
+	border-top: none;
+	border-bottom: none;
+}
+.project-nav a .col-xs-4.left-button {
+	position: relative;
+	left: 1px;
+}
+.project-nav a .col-xs-4.right-button {
+	position: relative;
+	right: 1px;
+}
+.project-nav a .col-xs-4:hover {
+	color: #333333;
+	background-color: #ffffff;
+}
+.project-nav a.disabled .col-xs-4 {
+	color: #cccccc;
+	background-color: #fafafa;
+}
+.project-nav a.disabled .col-xs-4:hover {
+	color: #cccccc;
+	background-color: #fafafa;
+}
+
+.gallery-container {
+	margin-bottom: 50px;
+}
+.project-img {
+	width: 100%;
+	background-color: #ffffff;
+	text-align: center;
+	margin-top: 10px;
+	transition: all 0.5s;
+}
+.project-img img {
+	width: 100%;
+	max-width: 1160px;
+}
+.coursera-logos {
+	height: 300px;
+}
+#coursera-logo {
+	margin-top: 125px;
+	width: 75%;
+	max-width: 300px;
+}
+#um-logo {
+	margin-top: 50px;
+	width: 50%;
+	max-width: 190px;
+}
+#uselab-logo {
+	margin-top: 105px;
+	width: 75%;
+	max-width: 300px;
+}
+#resmaps-img {
+	max-width: 900px;
+	padding: 30px;
+}
+
+
+/* about */
+.about-desc {
+	background-color: #f2f2f2;
+	padding: 0 40px;
+}
+.about-photo-container {
+	text-align: center;
+}
+.about-photo {
+	width: 100%;
+	max-width: 380px;
+	margin-bottom: 10px;
+}
+
+
+/* animations */
+#main.ng-enter {
+	transition: 0.5s;
+	opacity: 0;
+}
+#main.ng-enter.ng-enter-active{
+	opacity: 1;
+}
+#main.ng-leave {
+    transition: 0.5s;
+	opacity: 1;
+}
+#main.ng-leave.ng-leave-active{
+	opacity: 0;
+}

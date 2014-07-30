@@ -1,0 +1,86 @@
+<div class="project-nav project-nav-top">
+	<div class="container">
+		<div class="row">
+			<a ng-show="projectIndex>0" href="#projects/{{projects[projectIndex-1]}}" title="{{projectTitles[projectIndex-1]}}">
+				<div class="col-xs-4 left-button">
+					<span class="glyphicon glyphicon-chevron-left"></span>	
+				</div>
+			</a>
+			<a ng-show="projectIndex==0" class="disabled">
+				<div class="col-xs-4 left-button">
+					<span class="glyphicon glyphicon-chevron-left"></span>
+				</div>
+			</a>
+			<a href="#projects" title="Projects">
+				<div class="col-xs-4 center-button">
+					<span class="glyphicon glyphicon-th"></span>
+				</div>
+			</a>
+			<a ng-show="projectIndex==projects.length-1" class="disabled">
+				<div class="col-xs-4 right-button">
+					<span class="glyphicon glyphicon-chevron-right"></span>
+				</div>
+			</a>
+			<a ng-show="projectIndex<projects.length-1" href="#projects/{{projects[projectIndex+1]}}" title="{{projectTitles[projectIndex+1]}}">
+				<div class="col-xs-4 right-button">
+					<span class="glyphicon glyphicon-chevron-right"></span>
+				</div>
+			</a>
+		</div>
+	</div>
+</div>
+
+<div class="desc-wrapper">
+	<div class="container visible-xs visible-sm">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="desc-container">
+					<div ng-include src="descUrl"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container visible-md visible-lg">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="desc-container">
+					<div ng-include src="descUrl"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div ng-include src="galleryUrl" class="gallery-container"></div>
+
+<div class="project-nav project-nav-bottom">
+	<div class="container">
+		<div class="row">
+			<a ng-show="projectIndex>0" href="#projects/{{projects[projectIndex-1]}}" title="{{projectTitles[projectIndex-1]}}">
+				<div class="col-xs-4 left-button">
+					<span class="glyphicon glyphicon-chevron-left"></span>	
+				</div>
+			</a>
+			<a ng-show="projectIndex==0" class="disabled">
+				<div class="col-xs-4 left-button">
+					<span class="glyphicon glyphicon-chevron-left"></span>
+				</div>
+			</a>
+			<a href="#projects" title="Projects">
+				<div class="col-xs-4 center-button">
+					<span class="glyphicon glyphicon-th"></span>
+				</div>
+			</a>
+			<a ng-show="projectIndex==projects.length-1" class="disabled">
+				<div class="col-xs-4 right-button">
+					<span class="glyphicon glyphicon-chevron-right"></span>
+				</div>
+			</a>
+			<a ng-show="projectIndex<projects.length-1" href="#projects/{{projects[projectIndex+1]}}" title="{{projectTitles[projectIndex+1]}}">
+				<div class="col-xs-4 right-button">
+					<span class="glyphicon glyphicon-chevron-right"></span>
+				</div>
+			</a>
+		</div>
+	</div>
+</div>
