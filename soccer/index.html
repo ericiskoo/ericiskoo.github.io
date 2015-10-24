@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Soccer</title>
+	<meta name="description" content="">
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/app.css" />
+</head>
+<body ng-app="SoccerApp" ng-controller="MainCtrl">
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#"><img id="soccer-logo" src="img/soccer_ball.png"></a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div ng-if="data!==undefined" class="collapse navbar-collapse navbar-right" id="navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-calendar"></i>{{ formatDay(current_date) }}, {{ formatDate(current_date) }} <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li ng-repeat="date in dates"><a href="#" ng-click="changeDate(date)">{{ formatDay(date) }}, {{ formatDate(date) }}</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
+
+	<div id="main" class="container">
+		<div id="loading" ng-if="data==undefined">
+			Loading...
+		</div>
+		<div class="game-entry" ng-repeat="(i, row) in data | filter:isCurrentDate">
+			<div class="ref-icon-container">
+				<i class="glyphicon glyphicon-user" ng-class="{filled: row['Center']!=''}"></i>
+				<i ng-if="row['Ar']=='yes'" class="glyphicon glyphicon-user" ng-class="{filled: row['Ar1']!=''}"></i>
+				<i ng-if="row['Ar']=='yes'" class="glyphicon glyphicon-user" ng-class="{filled: row['Ar2']!=''}"></i>
+			</div>
+			<div class="game-info-container">
+				<div class="row hidden-sm hidden-xs">
+					<div class="col-sm-2 cell-time">{{ formatTime(row['Time']) }}</div>
+					<div class="col-sm-2 cell-division">{{ row['Division'] }}</div>
+					<div class="col-sm-6 cell-teams">{{ row['Home'] }} vs. {{ row['Visitor'] }}</div>
+					<div class="col-sm-2 cell-location">{{ row['Location'] }} - {{ row['Field'] }}</div>
+				</div>
+				<div class="row visible-sm visible-xs">
+					<div class="col-xs-3 cell-time">{{ formatTime(row['Time']) }}</div>
+					<div class="col-xs-3 cell-division">{{ row['Division'] }}</div>
+					<div class="col-xs-6 cell-location">{{ row['Location'] }} - {{ row['Field'] }}</div>
+					<div class="col-xs-12 cell-teams">{{ row['Home'] }} vs. {{ row['Visitor'] }}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.4/ui-bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.4/ui-bootstrap-tpls.min.js"></script>
+	<script src="js/app.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="js/app.js"></script>
+</body>
+</html>
