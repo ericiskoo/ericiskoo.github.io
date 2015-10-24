@@ -12,13 +12,6 @@ body {
 	position: relative;
 	top: -12px;
 }
-.glyphicon-user {
-	font-size: 16px;
-	color: #aaaaaa;
-}
-.filled {
-	color: green;
-}
 
 .row {
 	margin: 0;
@@ -52,12 +45,16 @@ body {
 	padding: 10px 15px;
 	min-height: 40px;
 }
-.mobile-view .game-entry {
-	font-size: 18px;
-}
 .ref-icon-container {
 	width: 70px;
 	float: left;
+}
+.glyphicon-user {
+	font-size: 16px;
+	color: #aaaaaa;
+}
+.filled {
+	color: green;
 }
 .game-info-container {
 	margin-left: 70px;
@@ -73,4 +70,20 @@ body {
 .cell-teams {
 	font-style: italic;
 	color: #9f9f9f;
+}
+
+.mobile-view .game-entry {
+	font-size: 28px;
+}
+.mobile-view .ref-icon-container {
+	width: 90px;
+}
+.mobile-view .glyphicon-user {
+	font-size: 20px;
+}
+.mobile-view .glyphicon-user.filled {
+	color: green;
+}
+.mobile-view .game-info-container {
+	margin-left: 90px;
 }
