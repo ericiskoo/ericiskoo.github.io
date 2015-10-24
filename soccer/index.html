@@ -54,10 +54,10 @@
 					<div class="col-sm-6 cell-teams">{{ row['Home'] }} vs. {{ row['Visitor'] }}</div>
 					<div class="col-sm-2 cell-location">{{ row['Location'] }} - {{ row['Field'] }}</div>
 				</div>
-				<div class="row visible-sm visible-xs">
-					<div class="col-xs-3 cell-time">{{ formatTime(row['Time']) }}</div>
-					<div class="col-xs-3 cell-division">{{ row['Division'] }}</div>
-					<div class="col-xs-6 cell-location">{{ row['Location'] }} - {{ row['Field'] }}</div>
+				<div class="row visible-sm visible-xs mobile-view">
+					<div class="col-xs-4 cell-time">{{ formatTime(row['Time']) }}</div>
+					<div class="col-xs-4 cell-division">{{ row['Division'] }}</div>
+					<div class="col-xs-4 cell-location">{{ row['Location'] }} - {{ row['Field'] }}</div>
 					<div class="col-xs-12 cell-teams">{{ row['Home'] }} vs. {{ row['Visitor'] }}</div>
 				</div>
 			</div>

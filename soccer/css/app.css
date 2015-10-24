@@ -52,6 +52,9 @@ body {
 	padding: 10px 15px;
 	min-height: 40px;
 }
+.mobile-view .game-entry {
+	font-size: 18px;
+}
 .ref-icon-container {
 	width: 70px;
 	float: left;
