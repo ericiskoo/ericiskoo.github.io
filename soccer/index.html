@@ -41,7 +41,7 @@
 		<div id="loading" ng-if="data==undefined">
 			Loading...
 		</div>
-		<div class="standard-view hidden-sm hidden-xs">
+		<div class="standard-view hidden-md hidden-sm hidden-xs">
 			<div class="game-entry" ng-repeat="(i, row) in data | filter:isCurrentDate">
 				<div class="ref-icon-container">
 					<i class="glyphicon glyphicon-user" ng-class="{filled: row['Center']!=''}"></i>
@@ -58,7 +58,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="mobile-view visible-sm visible-xs">
+		<div class="mobile-view visible-md visible-sm visible-xs">
 			<div class="game-entry" ng-repeat="(i, row) in data | filter:isCurrentDate">
 				<div class="ref-icon-container">
 					<i class="glyphicon glyphicon-user" ng-class="{filled: row['Center']!=''}"></i>
