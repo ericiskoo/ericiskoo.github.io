@@ -41,24 +41,37 @@
 		<div id="loading" ng-if="data==undefined">
 			Loading...
 		</div>
-		<div class="game-entry" ng-repeat="(i, row) in data | filter:isCurrentDate">
-			<div class="ref-icon-container">
-				<i class="glyphicon glyphicon-user" ng-class="{filled: row['Center']!=''}"></i>
-				<i ng-if="row['Ar']=='yes'" class="glyphicon glyphicon-user" ng-class="{filled: row['Ar1']!=''}"></i>
-				<i ng-if="row['Ar']=='yes'" class="glyphicon glyphicon-user" ng-class="{filled: row['Ar2']!=''}"></i>
-			</div>
-			<div class="game-info-container">
-				<div class="row hidden-sm hidden-xs">
-					<div class="col-sm-2 cell-time">{{ formatTime(row['Time']) }}</div>
-					<div class="col-sm-2 cell-division">{{ row['Division'] }}</div>
-					<div class="col-sm-6 cell-teams">{{ row['Home'] }} vs. {{ row['Visitor'] }}</div>
-					<div class="col-sm-2 cell-location">{{ row['Location'] }} - {{ row['Field'] }}</div>
+		<div class="standard-view hidden-sm hidden-xs">
+			<div class="game-entry" ng-repeat="(i, row) in data | filter:isCurrentDate">
+				<div class="ref-icon-container">
+					<i class="glyphicon glyphicon-user" ng-class="{filled: row['Center']!=''}"></i>
+					<i ng-if="row['Ar']=='yes'" class="glyphicon glyphicon-user" ng-class="{filled: row['Ar1']!=''}"></i>
+					<i ng-if="row['Ar']=='yes'" class="glyphicon glyphicon-user" ng-class="{filled: row['Ar2']!=''}"></i>
 				</div>
-				<div class="row visible-sm visible-xs mobile-view">
-					<div class="col-xs-4 cell-time">{{ formatTime(row['Time']) }}</div>
-					<div class="col-xs-4 cell-division">{{ row['Division'] }}</div>
-					<div class="col-xs-4 cell-location">{{ row['Location'] }} - {{ row['Field'] }}</div>
-					<div class="col-xs-12 cell-teams">{{ row['Home'] }} vs. {{ row['Visitor'] }}</div>
+				<div class="game-info-container">
+					<div class="row">
+						<div class="col-sm-2 cell-time">{{ formatTime(row['Time']) }}</div>
+						<div class="col-sm-2 cell-division">{{ row['Division'] }}</div>
+						<div class="col-sm-6 cell-teams">{{ row['Home'] }} vs. {{ row['Visitor'] }}</div>
+						<div class="col-sm-2 cell-location">{{ row['Location'] }} - {{ row['Field'] }}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="mobile-view visible-sm visible-xs">
+			<div class="game-entry" ng-repeat="(i, row) in data | filter:isCurrentDate">
+				<div class="ref-icon-container">
+					<i class="glyphicon glyphicon-user" ng-class="{filled: row['Center']!=''}"></i>
+					<i ng-if="row['Ar']=='yes'" class="glyphicon glyphicon-user" ng-class="{filled: row['Ar1']!=''}"></i>
+					<i ng-if="row['Ar']=='yes'" class="glyphicon glyphicon-user" ng-class="{filled: row['Ar2']!=''}"></i>
+				</div>
+				<div class="game-info-container">
+					<div class="row">
+						<div class="col-xs-4 cell-time">{{ formatTime(row['Time']) }}</div>
+						<div class="col-xs-4 cell-division">{{ row['Division'] }}</div>
+						<div class="col-xs-4 cell-location">{{ row['Location'] }} - {{ row['Field'] }}</div>
+						<div class="col-xs-12 cell-teams">{{ row['Home'] }} vs. {{ row['Visitor'] }}</div>
+					</div>
 				</div>
 			</div>
 		</div>

@@ -76,14 +76,14 @@ body {
 	font-size: 28px;
 }
 .mobile-view .ref-icon-container {
-	width: 90px;
+	width: 125px;
 }
 .mobile-view .glyphicon-user {
-	font-size: 20px;
+	font-size: 28px;
 }
 .mobile-view .glyphicon-user.filled {
 	color: green;
 }
 .mobile-view .game-info-container {
-	margin-left: 90px;
+	margin-left: 125px;
 }
