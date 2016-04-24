@@ -1,0 +1,52 @@
+body {
+	background-color: rgb(238,238,238);
+}
+
+.img-tile {
+	padding: 10px;
+	opacity: .9;
+	transition: all 0.25s;
+}
+.img-tile:hover {
+	opacity: 1;
+}
+.img-tile img {
+	width: 100%;
+	padding: 18px;
+	background-color: #ffffff;
+	border: 1px solid rgba(230,230,230,0.8);
+	border-radius: 2px;
+}
+
+#hero-container {
+	background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('http://i.imgur.com/OxVEVQX.jpg');
+	background-size: cover;
+	background-position: center top;
+	text-align: center;
+	padding-top: 120px;
+	padding-bottom: 120px;
+	min-height: 360px;
+	font-family: 'Great Vibes', cursive;
+	color: #ffffff;
+}
+#hero-container h1 {
+	margin: auto;
+	font-size: 56px;
+	max-width: 800px;
+	text-shadow: 0px 0px 8px rgba(10,10,20,0.4);
+}
+
+.modal {
+	text-align: center;
+}
+.modal img {
+	width: 100%;
+}
+.modal-header {
+	min-height: 42px;
+	border-bottom: 0;
+}
+.modal-body {
+	padding: 42px;
+	padding-top: 0;
+}
