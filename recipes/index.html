@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Recipes</title>
+    <style>
+      :root {
+        --bg: #0b0c10;
+        --card: rgba(255, 255, 255, 0.06);
+        --card2: rgba(255, 255, 255, 0.09);
+        --text: rgba(255, 255, 255, 0.92);
+        --muted: rgba(255, 255, 255, 0.68);
+        --border: rgba(255, 255, 255, 0.10);
+        --accent: #60a5fa;
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        --radius: 14px;
+        --tap: 52px;
+      }
+
+      @media (prefers-color-scheme: light) {
+        :root {
+          --bg: #f6f7fb;
+          --card: rgba(0, 0, 0, 0.04);
+          --card2: rgba(0, 0, 0, 0.06);
+          --text: rgba(0, 0, 0, 0.88);
+          --muted: rgba(0, 0, 0, 0.60);
+          --border: rgba(0, 0, 0, 0.10);
+          --accent: #2563eb;
+          --shadow: 0 12px 24px rgba(0, 0, 0, 0.10);
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Helvetica,
+          Arial,
+          "Apple Color Emoji",
+          "Segoe UI Emoji";
+        background: var(--bg);
+        color: var(--text);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      .safe {
+        padding: max(16px, env(safe-area-inset-top))
+          max(16px, env(safe-area-inset-right))
+          max(20px, env(safe-area-inset-bottom))
+          max(16px, env(safe-area-inset-left));
+      }
+
+      .container {
+        width: min(760px, 100%);
+        margin: 0 auto;
+      }
+
+      header {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 12px;
+        margin: 8px 0 14px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 22px;
+        line-height: 1.15;
+        letter-spacing: -0.01em;
+      }
+
+      .subtitle {
+        margin: 0;
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      .pill {
+        font-size: 12px;
+        color: var(--muted);
+        padding: 8px 10px;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: var(--card);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        white-space: nowrap;
+      }
+
+      .search {
+        margin: 12px 0 14px;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: color-mix(in srgb, var(--bg) 84%, transparent);
+        padding: 10px 0;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+      }
+
+      .search input {
+        width: 100%;
+        height: 44px;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        background: var(--card);
+        color: var(--text);
+        padding: 0 14px;
+        font-size: 16px;
+        outline: none;
+      }
+
+      .search input::placeholder {
+        color: var(--muted);
+      }
+
+      .list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      details {
+        border: 1px solid var(--border);
+        background: var(--card);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        overflow: clip;
+      }
+
+      summary {
+        list-style: none;
+        cursor: pointer;
+        padding: 14px 14px;
+        min-height: var(--tap);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        user-select: none;
+      }
+
+      summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .dish {
+        font-size: 16px;
+        font-weight: 650;
+        line-height: 1.2;
+      }
+
+      .chev {
+        flex: 0 0 auto;
+        width: 18px;
+        height: 18px;
+        color: var(--muted);
+        transition: transform 180ms ease;
+      }
+
+      details[open] .chev {
+        transform: rotate(180deg);
+        color: var(--accent);
+      }
+
+      .content {
+        border-top: 1px solid var(--border);
+        background: var(--card2);
+        padding: 12px 16px 14px;
+      }
+
+      ul {
+        margin: 0;
+        padding-left: 18px;
+      }
+
+      li {
+        margin: 8px 0;
+        line-height: 1.35;
+        color: var(--text);
+      }
+
+      .meta {
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .empty {
+        padding: 18px 12px;
+        text-align: center;
+        color: var(--muted);
+      }
+
+      .error {
+        padding: 14px;
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        background: var(--card);
+        color: var(--text);
+        white-space: pre-wrap;
+      }
+
+      .footer {
+        margin-top: 16px;
+        color: var(--muted);
+        font-size: 12px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="safe">
+      <div class="container">
+        <header>
+          <div>
+            <h1>Recipes</h1>
+            <p class="subtitle">Tap a dish to show ingredients</p>
+          </div>
+          <div class="pill" id="count">Loading…</div>
+        </header>
+
+        <div class="search">
+          <input id="q" type="search" inputmode="search" placeholder="Search dishes" autocomplete="off" />
+        </div>
+
+        <div id="app" class="list" aria-live="polite"></div>
+        <div id="footer" class="footer"></div>
+      </div>
+    </div>
+
+    <script>
+      function parseCSV(text) {
+        // Minimal RFC4180-ish parser supporting:
+        // - commas
+        // - newlines
+        // - quoted fields with doubled quotes
+        const rows = [];
+        let row = [];
+        let field = "";
+        let i = 0;
+        let inQuotes = false;
+
+        while (i < text.length) {
+          const ch = text[i];
+
+          if (inQuotes) {
+            if (ch === '"') {
+              const next = text[i + 1];
+              if (next === '"') {
+                field += '"';
+                i += 2;
+                continue;
+              }
+              inQuotes = false;
+              i += 1;
+              continue;
+            }
+            field += ch;
+            i += 1;
+            continue;
+          }
+
+          if (ch === '"') {
+            inQuotes = true;
+            i += 1;
+            continue;
+          }
+
+          if (ch === ',') {
+            row.push(field);
+            field = "";
+            i += 1;
+            continue;
+          }
+
+          if (ch === '\n' || ch === '\r') {
+            // handle CRLF
+            if (ch === '\r' && text[i + 1] === '\n') i += 1;
+            row.push(field);
+            field = "";
+            // avoid pushing trailing empty row for final newline
+            if (!(row.length === 1 && row[0] === "")) rows.push(row);
+            row = [];
+            i += 1;
+            continue;
+          }
+
+          field += ch;
+          i += 1;
+        }
+
+        // last field
+        if (field.length > 0 || row.length > 0) {
+          row.push(field);
+          if (!(row.length === 1 && row[0] === "")) rows.push(row);
+        }
+
+        return rows;
+      }
+
+      function normalizeIngredient(s) {
+        return s.replace(/\s+/g, " ").trim();
+      }
+
+      function splitIngredients(ingredientsStr) {
+        return ingredientsStr
+          .split(",")
+          .map((s) => normalizeIngredient(s))
+          .filter(Boolean);
+      }
+
+      function el(tag, attrs = {}, children = []) {
+        const node = document.createElement(tag);
+        for (const [k, v] of Object.entries(attrs)) {
+          if (k === "class") node.className = v;
+          else if (k === "text") node.textContent = v;
+          else if (k.startsWith("on") && typeof v === "function") node.addEventListener(k.slice(2), v);
+          else node.setAttribute(k, v);
+        }
+        for (const child of children) node.appendChild(child);
+        return node;
+      }
+
+      function render(recipes) {
+        const app = document.getElementById("app");
+        const count = document.getElementById("count");
+        const footer = document.getElementById("footer");
+        const q = document.getElementById("q");
+
+        function draw(filter) {
+          const term = (filter || "").trim().toLowerCase();
+          const filtered = term
+            ? recipes.filter((r) => r.dish_name.toLowerCase().includes(term))
+            : recipes;
+
+          app.replaceChildren();
+
+          count.textContent = `${filtered.length} dish${filtered.length === 1 ? "" : "es"}`;
+
+          if (filtered.length === 0) {
+            app.appendChild(el("div", { class: "empty", text: "No matching dishes." }));
+            return;
+          }
+
+          for (const recipe of filtered) {
+            const details = el("details");
+            const summary = el("summary");
+            const dish = el("div", { class: "dish", text: recipe.dish_name });
+            const chev = el(
+              "svg",
+              { class: "chev", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg", "aria-hidden": "true" },
+              [
+                el("path", {
+                  d: "M6 9l6 6 6-6",
+                  stroke: "currentColor",
+                  "stroke-width": "2",
+                  "stroke-linecap": "round",
+                  "stroke-linejoin": "round"
+                })
+              ]
+            );
+
+            summary.appendChild(dish);
+            summary.appendChild(chev);
+
+            const content = el("div", { class: "content" });
+            const ul = el("ul");
+            const items = splitIngredients(recipe.ingredients);
+            for (const item of items) {
+              ul.appendChild(el("li", { text: item }));
+            }
+
+            content.appendChild(ul);
+
+            details.appendChild(summary);
+            details.appendChild(content);
+            app.appendChild(details);
+          }
+        }
+
+        q.addEventListener("input", (e) => draw(e.target.value));
+        draw("");
+      }
+
+      async function main() {
+        const app = document.getElementById("app");
+        const count = document.getElementById("count");
+
+        try {
+          const res = await fetch("recipes.csv", { cache: "no-store" });
+          if (!res.ok) throw new Error(`Failed to load recipes.csv (HTTP ${res.status})`);
+
+          const text = await res.text();
+          const rows = parseCSV(text);
+          if (rows.length < 2) throw new Error("recipes.csv has no data rows.");
+
+          const header = rows[0].map((h) => h.trim());
+          const dishIdx = header.indexOf("dish_name");
+          const ingIdx = header.indexOf("ingredients");
+          if (dishIdx === -1 || ingIdx === -1) {
+            throw new Error(`Expected headers dish_name, ingredients. Found: ${header.join(", ")}`);
+          }
+
+          const recipes = rows
+            .slice(1)
+            .map((r) => ({
+              dish_name: (r[dishIdx] || "").trim(),
+              ingredients: (r[ingIdx] || "").trim()
+            }))
+            .filter((r) => r.dish_name.length > 0);
+
+          render(recipes);
+        } catch (err) {
+          count.textContent = "Error";
+          app.replaceChildren(
+            el("div", {
+              class: "error",
+              text:
+                "Could not render recipes.\n\n" +
+                String(err && err.message ? err.message : err)
+            })
+          );
+        }
+      }
+
+      main();
+    </script>
+  </body>
+</html>
